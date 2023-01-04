@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://css.gg/arrow-long-right.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <title>Booking Confirmed</title>
+    <style>
+      .ticket {
+        color: #f5f5f5;
+        position: relative;
+        transition: all 300ms cubic-bezier(0.03, 0.98, 0.53, 0.99) 0s;
+        border-radius: 20px;
+        padding: 5px;
+      }
+      .ticket-content-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: #f5f5f5;
+        border-radius: 15px;
+      }
+      .ticket-content-wrapper:before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 285px;
+        width: 40.25px;
+        height: 44px;
+        border-radius: 28.990999999999985px;
+        background: #ffffff;
+        z-index: 3;
+        left: 50%;
+      }
+      .ticket-content-wrapper:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 285px;
+        width: 40.25px;
+        height: 44px;
+        border-radius: 28.990999999999985px;
+        background: #ffffff;
+        z-index: 3;
+        left: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col mt-1 p-4 d-flex justify-content-between">
+          <div class="col" style="padding: 0px">
+            <p
+              style="
+                font-weight: 800;
+                font-size: 24px;
+                font-family: 'Merriweather', serif;
+                text-align: start;
+                margin-bottom: 0px;
+              "
+            >
+              Partner name <br />
+              and address
+            </p>
+          </div>
+          <div class="col" style="text-align: center; padding: 0px">
+            <img
+              src="file:///C:/Users/Anicha/PycharmProjects/rupi/media/RUPIYA.svg"
+              alt="Logo"
+              width="150 px"
+              height="50 px"
+            />
+          </div>
+          <div class="col" style="padding: 0px">
+            <p
+              style="
+                color: #15bc25;
+                font-weight: 800;
+                font-size: 24px;
+                font-family: 'Days One';
+                text-align: end;
+                margin-bottom: 0px;
+              "
+            >
+              Flight Booking
+            </p>
+            <p
+              style="
+                color: #15bc25;
+                font-weight: 800;
+                font-size: 24px;
+                font-family: 'Days One';
+                text-align: end;
+                margin-bottom: 3px;
+              "
+            >
+              Confirmed
+            </p>
+            <p
+              style="
+                color: rgb(126, 124, 125);
+                font-weight: 600;
+                font-size: 20px;
+                text-align: end;
+                margin-bottom: 0px;
+                font-family: 'Manrope';
+              "
+            >
+              ID: {{data.Booking_id}}
+            </p>
+            <p
+              style="
+                color: rgb(126, 124, 125);
+                font-weight: 600;
+                font-size: 20px;
+                text-align: end;
+                font-family: 'Manrope';
+              "
+            >
+              BOOKED ON: {{data.Booked_on}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div
+            class="ticket col-12 p-4"
+            style="margin-left: 1px; margin-right: 1px"
+          >
+            <div class="ticket-content-wrapper" style="min-height: 300px">
+              <div
+                class="col p-4 d-flex justify-content-between align-items-center"
+              >
+                <div>
+                  <div class="d-flex" style="margin-bottom: 30px">
+                    <img
+                      src="{{data.Company_logo}}"
+                      alt="company logo"
+                      style="border-radius: 50px; width: 50px; height: 50px"
+                    />
+                    <p
+                      style="
+                        color: rgb(126, 124, 125);
+                        font-weight: 600;
+                        font-size: 20px;
+                        text-align: start;
+                        font-family: 'Manrope';
+                        margin-left: 20px;
+                        margin-top: 10px;
+                      "
+                    >
+                      {{data.Company_name}} {{data.Plane_name}}
+                    </p>
+                  </div>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 20px;
+                      text-align: start;
+                      margin-bottom: 10px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.From_date}},{{data.From_time}}
+                  </p>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 20px;
+                      text-align: start;
+                      margin-bottom: 10px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.From_city}}
+                  </p>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 15px;
+                      text-align: start;
+                      margin-bottom: 0px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.From_platform}}
+                  </p>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 15px;
+                      text-align: start;
+                      margin-bottom: 0px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.From_airport_address}}
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="col"
+                    style="
+                      text-align: center;
+                      padding: 0px;
+                      position: absolute;
+                      left: 47%;
+                      top: 60%;
+                    "
+                  >
+                    <p
+                      style="
+                        width: 100px;
+                        height: 14px;
+                        font-family: 'Manrope';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 14px;
+                        color: #6c6c6c;
+                        flex: none;
+                        order: 0;
+                        flex-grow: 0;
+                      "
+                    >
+                      {{data.Time_diff}}
+                    </p>
+                  </div>
+                  <div
+                    class="col"
+                    style="
+                      text-align: center;
+                      padding: 0px;
+                      position: absolute;
+                      left: 2%;
+                      top: 70%;
+                    "
+                  >
+                    <img
+                      src="file:///C:/Users/Anicha/PycharmProjects/rupi/media/Vector 3.png"
+                      alt="Logo"
+                      width="100 px"
+                      height="10 px"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="col"
+                    style="margin-bottom: 30px; padding-right: 0px"
+                  >
+                    <p
+                      style="
+                        color: rgb(126, 124, 125);
+                        font-weight: 600;
+                        font-size: 20px;
+                        text-align: end;
+                        font-family: 'Manrope';
+                        margin-top: 10px;
+                      "
+                    >
+                      {{data.Booking_class}}
+                    </p>
+                  </div>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 20px;
+                      text-align: end;
+                      margin-bottom: 10px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.To_date}},{{data.To_time}}
+                  </p>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 20px;
+                      text-align: end;
+                      margin-bottom: 10px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.To_city}}
+                  </p>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 15px;
+                      text-align: end;
+                      margin-bottom: 0px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.To_platform}}
+                  </p>
+                  <p
+                    style="
+                      color: rgb(126, 124, 125);
+                      font-weight: 600;
+                      font-size: 15px;
+                      text-align: end;
+                      margin-bottom: 0px;
+                      font-family: 'Manrope';
+                    "
+                  >
+                    {{data.To_airport_address}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-12 p-4" style="margin-left: 1px; margin-right: 1px">
+            <p
+              style="
+                font-weight: 550;
+                font-size: 25px;
+                text-align: start;
+                font-family: 'Manrope';
+              "
+            >
+              Traveller Information
+            </p>
+            <table>
+              {% for i in data.Traveller_details %}
+              <tr style="margin-bottom: 10px">
+                <td
+                  style="
+                    width: 300px;
+                    height: 22px;
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 50px;
+                    color: #000000;
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+                  "
+                >
+                  {{i.Name}}
+                </td>
+                <td
+                  style="
+                    width: 500px;
+                    height: 22px;
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 50px;
+                    color: #6c6c6c;
+                    flex: none;
+                    order: 1;
+                    flex-grow: 0;
+                  "
+                >
+                  {{i.Age_group}} : {{i.Gender_type}}
+                </td>
+                <td
+                  style="
+                    width: 500px;
+                    height: 22px;
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 50px;
+                    color: #6c6c6c;
+                    flex: none;
+                    order: 2;
+                    flex-grow: 0;
+                  "
+                >
+                  PNR: {{i.Pnr_no}}
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-12 p-4">
+            <hr style="border: 1px solid #cd973a" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
